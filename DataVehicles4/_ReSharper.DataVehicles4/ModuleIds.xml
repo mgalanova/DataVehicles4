@@ -1,8 +1,0 @@
-<Modules>
-  <Module PersistentId="4638A7B1-5A11-4515-8660-90FF54C6AB66" ModuleId="DataVehicles4" />
-  <Module PersistentId="F16FB24B-E0AB-4B99-9477-186DCAFCC3C7" ModuleId="DataVehicles4.DataAccess" />
-  <Module PersistentId="BDE3D950-4D2E-4BC3-85C9-F497CB31DCC7" ModuleId="DataVehicles4.Service" />
-  <Module PersistentId="6A9EE45F-321A-462D-869D-7B30E7DD271C" ModuleId="DataVehicles4.Client" />
-  <Module PersistentId="A47BE327-B508-4092-8AF6-93431DDE9B15" ModuleId="DataVehicles4.UnitTests" />
-  <Module PersistentId="0C48F3E2-5735-45AF-A420-734F148DE7CB" ModuleId="DataVehicles4.Infrastructure" />
-</Modules>
