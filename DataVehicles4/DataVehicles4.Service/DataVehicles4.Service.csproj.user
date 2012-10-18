@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
@@ -21,6 +24,17 @@
           </StartWorkingDirectory>
           <EnableENC>False</EnableENC>
           <AlwaysStartWebServerOnDebug>True</AlwaysStartWebServerOnDebug>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>10711</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>https://dv-service.su</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>https://dv-service.su</CustomServerUrl>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>

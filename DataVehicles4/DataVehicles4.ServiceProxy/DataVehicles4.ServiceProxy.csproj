@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F16FB24B-E0AB-4B99-9477-186DCAFCC3C7}</ProjectGuid>
+    <ProjectGuid>{1D2B50BA-6910-41A7-93C7-B2484CD0E734}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DataVehicles4.DataAccess</RootNamespace>
-    <AssemblyName>DataVehicles4.DataAccess</AssemblyName>
+    <RootNamespace>DataVehicles4.ServiceProxy</RootNamespace>
+    <AssemblyName>DataVehicles4.ServiceProxy</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,14 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Iesi.Collections">
-      <HintPath>..\..\Libraries\Iesi.Collections.dll</HintPath>
-    </Reference>
-    <Reference Include="NHibernate">
-      <HintPath>..\..\Libraries\NHibernate.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,11 +43,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\DvServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="hibernate.cfg.xml" />
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DvServiceReference\DataVehicles4.ServiceProxy.DvServiceReference.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DvServiceReference\DvService.wsdl" />
+    <None Include="Service References\DvServiceReference\DvService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DvServiceReference\DvService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DvServiceReference\DvService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DvServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DvServiceReference\DvService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DvServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DvServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DvServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -46,8 +46,12 @@
     <Reference Include="DevExpress.Xpf.Layout.v12.1.Core, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpf.Printing.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpf.Ribbon.v12.1, Version=12.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="log4net">
+      <HintPath>..\..\Libraries\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -70,6 +74,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Initializer.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -91,6 +96,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -168,6 +177,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Icons\zoom-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataVehicles4.ServiceProxy\DataVehicles4.ServiceProxy.csproj">
+      <Project>{1D2B50BA-6910-41A7-93C7-B2484CD0E734}</Project>
+      <Name>DataVehicles4.ServiceProxy</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -54,7 +54,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DvService.svc" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -72,23 +74,24 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataVehicles.Domain\DataVehicles.Domain.csproj">
+      <Project>{1354523D-184F-4442-8405-FD3BE986FAFC}</Project>
+      <Name>DataVehicles.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>10711</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>
-          </IISUrl>
-          <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
-          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
           <EnableWcfTestClientForSVCDefaultValue>True</EnableWcfTestClientForSVCDefaultValue>
         </WebProjectProperties>
       </FlavorProperties>

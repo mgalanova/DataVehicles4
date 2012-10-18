@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DataVehicles4.Infrastructure")]
+[assembly: AssemblyTitle("DataVehicles4.ServiceProxy")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DataVehicles4.Infrastructure")]
+[assembly: AssemblyProduct("DataVehicles4.ServiceProxy")]
 [assembly: AssemblyCopyright("Copyright ©  2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("f5442222-d771-49e5-82d4-b18aa72037d1")]
+[assembly: Guid("7c1aa56c-e448-4f3a-9c89-315bcada1404")]
 
 // Version information for an assembly consists of the following four values:
 //

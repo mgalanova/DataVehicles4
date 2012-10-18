@@ -1,19 +1,51 @@
 <Configuration>
   <RecentFiles>
     <RecentFiles>
+      <File id="A47BE327-B508-4092-8AF6-93431DDE9B15/f:UnitTest1.cs" caret="677" fromTop="11" />
+      <File id="F16FB24B-E0AB-4B99-9477-186DCAFCC3C7/d:Properties/f:AssemblyInfo.cs" caret="58" fromTop="1" />
+      <File id="6A9EE45F-321A-462D-869D-7B30E7DD271C/d:Properties/f:Settings.Designer.cs" caret="0" fromTop="0" />
+      <File id="BDE3D950-4D2E-4BC3-85C9-F497CB31DCC7/f:log4net.config" caret="131" fromTop="2" />
+      <File id="6A9EE45F-321A-462D-869D-7B30E7DD271C/d:Properties/f:AssemblyInfo.cs" caret="383" fromTop="8" />
       <File id="F16FB24B-E0AB-4B99-9477-186DCAFCC3C7/f:Class1.cs" caret="0" fromTop="0" />
-      <File id="6A9EE45F-321A-462D-869D-7B30E7DD271C/f:MainWindow.xaml.cs" caret="0" fromTop="0" />
+      <File id="6A9EE45F-321A-462D-869D-7B30E7DD271C/f:App.config" caret="692" fromTop="11" />
+      <File id="BDE3D950-4D2E-4BC3-85C9-F497CB31DCC7/f:DvService.svc.cs" caret="506" fromTop="9" />
+      <File id="1D2B50BA-6910-41A7-93C7-B2484CD0E734/d:Service References/d:DvServiceReference/f:Reference.cs" caret="3303" fromTop="12" />
+      <File id="1D2B50BA-6910-41A7-93C7-B2484CD0E734/d:Service References/d:DvServiceReference/f:configuration91.svcinfo" caret="12873" fromTop="4" />
+      <File id="1D2B50BA-6910-41A7-93C7-B2484CD0E734/d:Service References/d:DvServiceReference/f:configuration.svcinfo" caret="1576" fromTop="7" />
+      <File id="BDE3D950-4D2E-4BC3-85C9-F497CB31DCC7/f:Web.config" caret="533" fromTop="6" />
+      <File id="BDE3D950-4D2E-4BC3-85C9-F497CB31DCC7/f:IDvService.cs" caret="452" fromTop="12" />
+      <File id="1354523D-184F-4442-8405-FD3BE986FAFC/f:CompositeType.cs" caret="206" fromTop="5" />
+      <File id="F16FB24B-E0AB-4B99-9477-186DCAFCC3C7/f:hibernate.cfg.xml" caret="0" fromTop="0" />
+      <File id="6A9EE45F-321A-462D-869D-7B30E7DD271C/f:App.xaml.cs" caret="487" fromTop="9" />
+      <File id="6A9EE45F-321A-462D-869D-7B30E7DD271C/f:Initializer.cs" caret="33" fromTop="1" />
+      <File id="6A9EE45F-321A-462D-869D-7B30E7DD271C/f:log4net.config" caret="96" fromTop="1" />
       <File id="6A9EE45F-321A-462D-869D-7B30E7DD271C/d:Properties/f:licenses.licx" caret="0" fromTop="0" />
-      <File id="BDE3D950-4D2E-4BC3-85C9-F497CB31DCC7/f:IDvService.cs" caret="425" fromTop="12" />
-      <File id="BDE3D950-4D2E-4BC3-85C9-F497CB31DCC7/f:DvService.svc.cs" caret="0" fromTop="0" />
-      <File id="A47BE327-B508-4092-8AF6-93431DDE9B15/f:UnitTest1.cs" caret="435" fromTop="18" />
       <File id="6A9EE45F-321A-462D-869D-7B30E7DD271C/f:MainWindow.xaml" caret="0" fromTop="0" />
-      <File id="0C48F3E2-5735-45AF-A420-734F148DE7CB/f:Class1.cs" caret="0" fromTop="0" />
+      <File id="BDE3D950-4D2E-4BC3-85C9-F497CB31DCC7/f:DvService.svc" caret="0" fromTop="0" />
+      <File id="6A9EE45F-321A-462D-869D-7B30E7DD271C/f:MainWindow.xaml.cs" caret="6422" fromTop="14" />
     </RecentFiles>
     <RecentEdits>
-      <File id="6A9EE45F-321A-462D-869D-7B30E7DD271C/f:MainWindow.xaml.cs" caret="0" fromTop="0" />
-      <File id="BDE3D950-4D2E-4BC3-85C9-F497CB31DCC7/f:IDvService.cs" caret="425" fromTop="12" />
-      <File id="BDE3D950-4D2E-4BC3-85C9-F497CB31DCC7/f:DvService.svc.cs" caret="0" fromTop="0" />
+      <File id="BDE3D950-4D2E-4BC3-85C9-F497CB31DCC7/f:Web.config" caret="706" fromTop="18" />
+      <File id="BDE3D950-4D2E-4BC3-85C9-F497CB31DCC7/f:Web.config" caret="757" fromTop="6" />
+      <File id="BDE3D950-4D2E-4BC3-85C9-F497CB31DCC7/f:Web.config" caret="1674" fromTop="16" />
+      <File id="BDE3D950-4D2E-4BC3-85C9-F497CB31DCC7/f:Web.config" caret="1287" fromTop="10" />
+      <File id="6A9EE45F-321A-462D-869D-7B30E7DD271C/f:App.xaml.cs" caret="489" fromTop="19" />
+      <File id="6A9EE45F-321A-462D-869D-7B30E7DD271C/f:App.xaml.cs" caret="487" fromTop="9" />
+      <File id="6A9EE45F-321A-462D-869D-7B30E7DD271C/f:MainWindow.xaml.cs" caret="1512" fromTop="10" />
+      <File id="6A9EE45F-321A-462D-869D-7B30E7DD271C/f:MainWindow.xaml.cs" caret="1512" fromTop="9" />
+      <File id="BDE3D950-4D2E-4BC3-85C9-F497CB31DCC7/f:Web.config" caret="990" fromTop="19" />
+      <File id="BDE3D950-4D2E-4BC3-85C9-F497CB31DCC7/f:Web.config" caret="638" fromTop="8" />
+      <File id="6A9EE45F-321A-462D-869D-7B30E7DD271C/f:MainWindow.xaml.cs" caret="1512" fromTop="10" />
+      <File id="6A9EE45F-321A-462D-869D-7B30E7DD271C/f:MainWindow.xaml.cs" caret="1065" fromTop="3" />
+      <File id="6A9EE45F-321A-462D-869D-7B30E7DD271C/f:MainWindow.xaml.cs" caret="7103" fromTop="194" />
+      <File id="6A9EE45F-321A-462D-869D-7B30E7DD271C/f:MainWindow.xaml.cs" caret="1512" fromTop="20" />
+      <File id="6A9EE45F-321A-462D-869D-7B30E7DD271C/f:MainWindow.xaml.cs" caret="1522" fromTop="8" />
+      <File id="6A9EE45F-321A-462D-869D-7B30E7DD271C/f:MainWindow.xaml.cs" caret="6178" fromTop="23" />
+      <File id="6A9EE45F-321A-462D-869D-7B30E7DD271C/f:MainWindow.xaml.cs" caret="1065" fromTop="11" />
+      <File id="6A9EE45F-321A-462D-869D-7B30E7DD271C/f:MainWindow.xaml.cs" caret="6870" fromTop="23" />
+      <File id="6A9EE45F-321A-462D-869D-7B30E7DD271C/f:MainWindow.xaml.cs" caret="5591" fromTop="14" />
+      <File id="BDE3D950-4D2E-4BC3-85C9-F497CB31DCC7/f:DvService.svc.cs" caret="506" fromTop="9" />
+      <File id="6A9EE45F-321A-462D-869D-7B30E7DD271C/f:MainWindow.xaml.cs" caret="6386" fromTop="12" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -34,4 +66,39 @@
       <setting name="SolutionAnalysisEnabled">False</setting>
     </boolean>
   </SettingsComponent>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="CSharpCodeCompletionContext">
+      <Item value="TypeInitializationException`0" priority="31" />
+      <Item value="static" priority="94" />
+      <Item value="throw" priority="31" />
+      <Item value="new" priority="31" />
+      <Item value="EventLogException" priority="28" />
+      <Item value="LogBase" priority="16" />
+      <Item value="LoggerBase" priority="16" />
+      <Item value="DataContract" priority="21" />
+      <Item value="Console`0" priority="31" />
+      <Item value="DataContext" priority="63" />
+      <Item value="return" priority="63" />
+      <Item value="data" priority="95" />
+      <Item value="private" priority="31" />
+      <Item value="int" priority="31" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@DevExpress.Xpo.Logger.LogManager">
+      <Item value="Log`1" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@DataVehicles4.Infrastructure.Log">
+      <Item value="LogError`0" priority="26" />
+      <Item value="LogInfo`0" priority="27" />
+      <Item value="LogWarning`0" priority="27" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@DevExpress.Xpf.Core.Native.LogBase">
+      <Item value="Add`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DataVehicles4.ServiceProxy.DvServiceReference.DvServiceClient">
+      <Item value="GetData`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Console">
+      <Item value="ReadKey`0" priority="27" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
 </Configuration>
