@@ -184,6 +184,25 @@
       <Name>DataVehicles4.ServiceProxy</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\excel-16x16.png" />
+    <Resource Include="Images\Icons\excel-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\save-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\charts-16x16.png" />
+    <Resource Include="Images\Icons\charts-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\database-16x16.png" />
+    <Resource Include="Images\Icons\database-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\settings-16x16.png" />
+    <Resource Include="Images\Icons\settings-32x32.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -26,12 +26,25 @@
             <dxb:BarButtonItem x:Name="bCopy" Content="Copy" Glyph="Images/Icons/copy-16x16.png" LargeGlyph="Images/Icons/copy-32x32.png" />
             <dxb:BarButtonItem x:Name="bPaste" Content="Paste" Glyph="Images/Icons/paste-16x16.png" LargeGlyph="Images/Icons/paste-32x32.png" />
             <dxb:BarButtonItem x:Name="bNew" Content="New" Glyph="Images/Icons/new-16x16.png" LargeGlyph="Images/Icons/New-32x32.png" />
+            <dxb:BarButtonItem x:Name="bRegistrations" Content="Charts" Glyph="Images\Icons\database-16x16.png" LargeGlyph="Images\Icons\database-32x32.png" />
+            <dxb:BarButtonItem x:Name="bParc" Content="Parc" Glyph="Images\Icons\database-16x16.png" LargeGlyph="Images\Icons\database-32x32.png" />
+            <dxb:BarButtonItem x:Name="bProduction" Content="Production" Glyph="Images\Icons\database-16x16.png" LargeGlyph="Images\Icons\database-32x32.png" />
+            <dxb:BarButtonItem x:Name="bImportExport" Content="Import/ Export" Glyph="Images\Icons\database-16x16.png" LargeGlyph="Images\Icons\database-32x32.png" />
+            <dxb:BarButtonItem x:Name="bFleet" Content="Fleet" Glyph="Images\Icons\database-16x16.png" LargeGlyph="Images\Icons\database-32x32.png" />
+            <dxb:BarButtonItem x:Name="bSales" Content="Sales" Glyph="Images\Icons\database-16x16.png" LargeGlyph="Images\Icons\database-32x32.png" />
+            <dxb:BarButtonItem x:Name="bPrice" Content="Price" Glyph="Images\Icons\database-16x16.png" LargeGlyph="Images\Icons\database-32x32.png" />
+            <dxb:BarButtonItem x:Name="bConsumers" Content="Consumers" Glyph="Images\Icons\database-16x16.png" LargeGlyph="Images\Icons\database-32x32.png"/>
+            <dxb:BarButtonItem x:Name="bOther" Content="Other" Glyph="Images\Icons\database-16x16.png" LargeGlyph="Images\Icons\database-32x32.png" />
+            <dxb:BarButtonItem x:Name="bCharts" Content="Charts" Glyph="Images/Icons/charts-16x16.png" LargeGlyph="Images/Icons/charts-32x32.png" />
             <dxb:BarButtonItem x:Name="bPrint" Content="Print" Glyph="Images/Icons/print-16x16.png" LargeGlyph="Images/Icons/print-32x32.png" />
-            <dxb:BarButtonItem x:Name="bOpen" Content="Open" Glyph="Images/Icons/open-16x16.png" LargeGlyph="Images/Icons/open-32x32.png" />
+            <dxb:BarButtonItem x:Name="bExcelImport" Content="Import to Excel" Glyph="Images/Icons/excel-16x16.png" LargeGlyph="Images/Icons/excel-32x32.png" />
+            <dxb:BarButtonItem x:Name="bSave" Content="Save Pivot" Glyph="Images/Icons/save-16x16.png" LargeGlyph="Images/Icons/save-32x32.png"/>
+            <dxb:BarButtonItem x:Name="bOpen" Content="Open Pivot" Glyph="Images/Icons/open-16x16.png" LargeGlyph="Images/Icons/open-32x32.png" />
+            <dxb:BarButtonItem x:Name="bSettings" Content="Settings" Glyph="Images/Icons/settings-16x16.png" LargeGlyph="Images/Icons/settings-32x32.png" />
             <dxb:BarSubItem x:Name="mmFile" Content="File" Glyph="Images/Icons/zoom-16x16.png" LargeGlyph="Images/Icons/zoom-32x32.png">
                 <dxb:BarSubItem.ItemLinks>
                     <dxb:BarButtonItemLink BarItemName="bNew" />
-                    <dxb:BarButtonItemLink BarItemName="bOpen" />
+                    <dxb:BarButtonItemLink BarItemName="bSave" />
                 </dxb:BarSubItem.ItemLinks>
             </dxb:BarSubItem>
         </dxb:BarManager.Items>
@@ -41,7 +54,7 @@
                     <dxr:ApplicationMenuInfo RightPaneWidth="280" ShowRightPane="True">
                         <dxr:ApplicationMenuInfo.ItemLinks>
                             <dxb:BarButtonItemLink BarItemName="bNew" />
-                            <dxb:BarButtonItemLink BarItemName="bOpen" />
+                            <dxb:BarButtonItemLink BarItemName="bSave" />
                             <dxb:BarButtonItemLink BarItemName="bHelp" />
                         </dxr:ApplicationMenuInfo.ItemLinks>
                         <dxr:ApplicationMenuInfo.RightPane>
@@ -55,9 +68,7 @@
                     </dxr:ApplicationMenuInfo>
                 </dxr:RibbonControl.ApplicationMenu>
                 <dxr:RibbonControl.PageHeaderItemLinks>
-                    <dxb:BarButtonItemLink BarItemName="bNew" />
-                    <dxb:BarButtonItemLink BarItemName="bOpen" />
-                    <dxb:BarButtonItemLink BarItemName="bHelp" />
+                    <dxb:BarButtonItemLink BarItemName="bSettings" />
                 </dxr:RibbonControl.PageHeaderItemLinks>
                 <dxr:RibbonDefaultPageCategory>
                     <dxr:RibbonPage Name="Home" Caption="Home">
@@ -65,16 +76,36 @@
                             <dxr:RibbonPageGroup.ItemLinks>
                                 <dxb:BarButtonItemLink BarItemName="bNew" />
                                 <dxb:BarSubItemLink BarItemName="mmFile" RibbonStyle="Large" />
-                                <dxb:BarButtonItemLink BarItemName="bOpen" RibbonStyle="SmallWithText" />
+                                <dxb:BarButtonItemLink BarItemName="bSave" RibbonStyle="SmallWithText" />
                                 <dxb:BarSubItemLink BarItemName="mmFile" RibbonStyle="SmallWithText" />
                                 <dxb:BarButtonItemLink BarItemName="bPrint" RibbonStyle="SmallWithText" />
                                 <dxb:BarItemLinkSeparator />
-                                <dxb:BarButtonItemLink BarItemName="bOpen" RibbonStyle="SmallWithoutText" />
+                                <dxb:BarButtonItemLink BarItemName="bSave" RibbonStyle="SmallWithoutText" />
                                 <dxb:BarSubItemLink BarItemName="mmFile" RibbonStyle="SmallWithoutText" />
                                 <dxb:BarButtonItemLink BarItemName="bPrint" RibbonStyle="SmallWithoutText" />
                             </dxr:RibbonPageGroup.ItemLinks>
                         </dxr:RibbonPageGroup>
-                        <dxr:RibbonPageGroup Caption="Second Page Group">
+                        <dxr:RibbonPageGroup Caption="Bases">
+                            <dxb:BarButtonItemLink BarItemName="bRegistrations" />
+                            <dxb:BarButtonItemLink BarItemName="bParc" />
+                            <dxb:BarButtonItemLink BarItemName="bProduction" />
+                            <dxb:BarButtonItemLink BarItemName="bImportExport" />
+                            <dxb:BarButtonItemLink BarItemName="bFleet" />
+                            <dxb:BarButtonItemLink BarItemName="bSales" />
+                            <dxb:BarButtonItemLink BarItemName="bPrice" />
+                            <dxb:BarButtonItemLink BarItemName="bConsumers" />
+                            <dxb:BarButtonItemLink BarItemName="bOther" />
+                        </dxr:RibbonPageGroup>
+                        <dxr:RibbonPageGroup Caption="">
+                            <dxb:BarButtonItemLink BarItemName="bCharts" />
+                        </dxr:RibbonPageGroup>
+                        <dxr:RibbonPageGroup Caption="">
+                            <dxb:BarButtonItemLink BarItemName="bSave" />
+                            <dxb:BarButtonItemLink BarItemName="bOpen" />
+                        </dxr:RibbonPageGroup>
+                        <dxr:RibbonPageGroup Caption="Import Page Group">
+                            <dxb:BarButtonItemLink BarItemName="bExcelImport" />
+                            <dxb:BarButtonItemLink BarItemName="bPrint" />
                         </dxr:RibbonPageGroup>
                     </dxr:RibbonPage>
                     <dxr:RibbonPage Name="Second" Caption="Second Page">
@@ -82,7 +113,7 @@
                 </dxr:RibbonDefaultPageCategory>
                 <dxr:RibbonControl.ToolbarItemLinks>
                     <dxb:BarButtonItemLink BarItemName="bNew" />
-                    <dxb:BarButtonItemLink BarItemName="bOpen" />
+                    <dxb:BarButtonItemLink BarItemName="bSave" />
                     <dxb:BarItemLinkSeparator />
                     <dxb:BarButtonItemLink BarItemName="bCopy" />
                     <dxb:BarButtonItemLink BarItemName="bPaste" />
@@ -90,8 +121,9 @@
             </dxr:RibbonControl>
             <dxd:DockLayoutManager x:Name="dockLayoutManager">
                 <dxd:LayoutGroup>
-                    <dxd:LayoutGroup Orientation="Vertical"  ItemWidth="3*">
-                        <dxd:DocumentGroup ItemHeight="3*">
+                    <dxd:LayoutPanel Caption="Selected columns" ItemWidth="0.79*" />
+                    <dxd:LayoutGroup Orientation="Vertical"  ItemWidth="3.21*">
+                        <dxd:DocumentGroup ItemHeight="3*" SelectedTabIndex="0">
                             <dxd:DocumentPanel Caption="Document1" ItemHeight="3*">
                                 <dxg:GridControl x:Name="gridControl" AutoPopulateColumns="True" ItemsSource="{Binding Data}" ShowBorder="False">
                                     <dxg:GridControl.View>
@@ -145,10 +177,7 @@
                             </Grid>
                         </dxd:LayoutPanel>
                     </dxd:LayoutGroup>
-                    <dxd:TabbedGroup ItemWidth="*">
-                        <dxd:LayoutPanel Caption="Properties" />
-                        <dxd:LayoutPanel Caption="Explorer" />
-                    </dxd:TabbedGroup>
+                    <dxd:TabbedGroup ItemWidth="*" SelectedTabIndex="0"></dxd:TabbedGroup>
                 </dxd:LayoutGroup>
                 <dxd:DockLayoutManager.AutoHideGroups>
                     <dxd:AutoHideGroup >

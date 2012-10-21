@@ -17,20 +17,8 @@ namespace DataVehicles4.Client
     /// </summary>
     public partial class App : Application
     {
-
-        private static ILog log;
-
         static App()
         {
-
-           /* XmlConfigurator.Configure();
-            log = LogManager.GetLogger(typeof(App));*/
+            }
         }
-
-       /* public ILog Logger
-        {
-            get { return log; }
-        }*/
-
-    }
 }
