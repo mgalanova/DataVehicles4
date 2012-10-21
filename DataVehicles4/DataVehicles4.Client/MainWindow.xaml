@@ -121,7 +121,10 @@
             </dxr:RibbonControl>
             <dxd:DockLayoutManager x:Name="dockLayoutManager">
                 <dxd:LayoutGroup>
-                    <dxd:LayoutPanel Caption="Selected columns" ItemWidth="0.79*" />
+                    <dxd:TabbedGroup ItemWidth="*" SelectedTabIndex="0">
+                        <dxd:LayoutPanel Caption="Selected columns" />
+                        <dxd:LayoutPanel Caption="Filters Panel" />
+                    </dxd:TabbedGroup>
                     <dxd:LayoutGroup Orientation="Vertical"  ItemWidth="3.21*">
                         <dxd:DocumentGroup ItemHeight="3*" SelectedTabIndex="0">
                             <dxd:DocumentPanel Caption="Document1" ItemHeight="3*">
@@ -177,7 +180,6 @@
                             </Grid>
                         </dxd:LayoutPanel>
                     </dxd:LayoutGroup>
-                    <dxd:TabbedGroup ItemWidth="*" SelectedTabIndex="0"></dxd:TabbedGroup>
                 </dxd:LayoutGroup>
                 <dxd:DockLayoutManager.AutoHideGroups>
                     <dxd:AutoHideGroup >
