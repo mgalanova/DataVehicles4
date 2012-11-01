@@ -1,24 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
+﻿#region Usings
+
 using System.Windows;
 
-namespace DataVehicles4.Client
-{
-    using DataVehicles4.ServiceProxy.DvServiceReference;
+#endregion
 
-    using log4net;
-    using log4net.Config;
-
+namespace DataVehicles4.Client {
     /// <summary>
-    /// Interaction logic for App.xaml
+    ///   Interaction logic for App.xaml
     /// </summary>
-    public partial class App : Application
-    {
-        static App()
-        {
+    public partial class App : Application {
             }
         }
 }

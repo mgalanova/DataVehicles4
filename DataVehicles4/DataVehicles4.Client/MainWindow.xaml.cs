@@ -1,110 +1,65 @@
-﻿using System;
-using System.Collections.Generic;
+﻿#region Usings
+
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-
-using DevExpress.Xpf.Bars;
-using DevExpress.Xpf.Charts;
-using DevExpress.Xpf.Core;
-using DevExpress.Xpf.Docking;
-using DevExpress.Xpf.Grid;
-using DevExpress.Xpf.Layout.Core;
-using DevExpress.Xpf.Printing;
+using System.Net;
+using System.Net.Security;
+using System.Security.Cryptography.X509Certificates;
+using DataVehicles4.ServiceProxy.DvServiceReference;
 using DevExpress.Xpf.Ribbon;
 
-namespace DataVehicles4.Client
-{
-    using System.Net;
-    using System.Net.Security;
-    using System.Security.Cryptography.X509Certificates;
+#endregion
 
-    using DataVehicles4.ServiceProxy.DvServiceReference;
-
-    using log4net;
-    using log4net.Config;
-
+namespace DataVehicles4.Client {
     /// <summary>
-    /// The main window.
+    ///   The main window.
     /// </summary>
-    public partial class MainWindow : DXRibbonWindow
-    {
-
-        private static ILog log;
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MainWindow"/> class.
-        /// </summary>
-        public MainWindow()
-        {
-            XmlConfigurator.Configure();
-            log = LogManager.GetLogger(typeof(App));
-
-            log.Info("Test!!");
-            log.Warn("Test!!");
-            log.Error("Test!!");
+    public partial class MainWindow : DXRibbonWindow {
+        public MainWindow() {
             InitializeComponent();
             DataContext = new DataSource();
         }
     }
 
     /// <summary>
-    /// The test data.
+    ///   The test data.
     /// </summary>
-    public class TestData
-    {
+    public class TestData {
         /// <summary>
-        /// Gets or sets Text.
+        ///   Gets or sets Text.
         /// </summary>
         public string Text { get; set; }
 
         /// <summary>
-        /// Gets or sets Number.
+        ///   Gets or sets Number.
         /// </summary>
         public int Number { get; set; }
     }
 
     /// <summary>
-    /// The test data view model.
+    ///   The test data view model.
     /// </summary>
-    public class TestDataViewModel : INotifyPropertyChanged
-    {
+    public class TestDataViewModel : INotifyPropertyChanged {
         /// <summary>
-        /// The data.
+        ///   The data.
         /// </summary>
-        private TestData data;
+        private readonly TestData data;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TestDataViewModel"/> class.
+        ///   Initializes a new instance of the <see cref="TestDataViewModel" /> class.
         /// </summary>
-        public TestDataViewModel()
-        {
-            data = new TestData { Text = string.Empty, Number = 0 };
+        public TestDataViewModel() {
+            data = new TestData {Text = string.Empty, Number = 0};
         }
 
         /// <summary>
-        /// Gets or sets Text.
+        ///   Gets or sets Text.
         /// </summary>
-        public string Text
-        {
-            get
-            {
-                return Data.Text;
-            }
+        public string Text {
+            get { return Data.Text; }
 
-            set
-            {
-                if (Data.Text == value)
-                {
+            set {
+                if (Data.Text == value) {
                     return;
                 }
 
@@ -114,19 +69,13 @@ namespace DataVehicles4.Client
         }
 
         /// <summary>
-        /// Gets or sets Number.
+        ///   Gets or sets Number.
         /// </summary>
-        public int Number
-        {
-            get
-            {
-                return Data.Number;
-            }
+        public int Number {
+            get { return Data.Number; }
 
-            set
-            {
-                if (Data.Number == value)
-                {
+            set {
+                if (Data.Number == value) {
                     return;
                 }
 
@@ -136,45 +85,34 @@ namespace DataVehicles4.Client
         }
 
         /// <summary>
-        /// Gets Data.
+        ///   Gets Data.
         /// </summary>
-        protected TestData Data
-        {
-            get
-            {
-                return data;
-            }
+        protected TestData Data {
+            get { return data; }
         }
 
         #region INotifyPropertyChanged
 
         /// <summary>
-        /// The property changed.
+        ///   The property changed.
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
-        /// The on property changed.
+        ///   The on property changed.
         /// </summary>
-        /// <param name="e">
-        /// The e.
-        /// </param>
-        protected virtual void OnPropertyChanged(PropertyChangedEventArgs e)
-        {
-            if (PropertyChanged != null)
-            {
+        /// <param name="e"> The e. </param>
+        protected virtual void OnPropertyChanged(PropertyChangedEventArgs e) {
+            if (PropertyChanged != null) {
                 PropertyChanged(this, e);
             }
         }
 
         /// <summary>
-        /// The raise property changed.
+        ///   The raise property changed.
         /// </summary>
-        /// <param name="propertyName">
-        /// The property name.
-        /// </param>
-        protected void RaisePropertyChanged(string propertyName)
-        {
+        /// <param name="propertyName"> The property name. </param>
+        protected void RaisePropertyChanged(string propertyName) {
             OnPropertyChanged(new PropertyChangedEventArgs(propertyName));
         }
 
@@ -182,59 +120,51 @@ namespace DataVehicles4.Client
     }
 
     /// <summary>
-    /// The data source.
+    ///   The data source.
     /// </summary>
-    public class DataSource
-    {
+    public class DataSource {
         /// <summary>
-        /// The source.
+        ///   The source.
         /// </summary>
-        private ObservableCollection<TestDataViewModel> source;
+        private readonly ObservableCollection<TestDataViewModel> source;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DataSource"/> class.
+        ///   Initializes a new instance of the <see cref="DataSource" /> class.
         /// </summary>
-        public DataSource()
-        {
+        public DataSource() {
             source = CreateDataSource();
         }
 
         /// <summary>
-        /// The create data source.
+        ///   The create data source.
         /// </summary>
-        /// <returns>
-        /// </returns>
-        protected ObservableCollection<TestDataViewModel> CreateDataSource()
-        {
-            ObservableCollection<TestDataViewModel> res = new ObservableCollection<TestDataViewModel>();
-            res.Add(new TestDataViewModel { Text = GetDataFromService(0), Number = 0 });
-            res.Add(new TestDataViewModel { Text = GetDataFromService(1), Number = 1 });
-            res.Add(new TestDataViewModel { Text = GetDataFromService(2), Number = 2 });
-            res.Add(new TestDataViewModel { Text = GetDataFromService(3), Number = 3 });
-            res.Add(new TestDataViewModel { Text = "Row4", Number = 4 });
-            res.Add(new TestDataViewModel { Text = "Row5", Number = 5 });
-            res.Add(new TestDataViewModel { Text = "Row6", Number = 6 });
-            res.Add(new TestDataViewModel { Text = "Row7", Number = 7 });
-            res.Add(new TestDataViewModel { Text = "Row8", Number = 8 });
-            res.Add(new TestDataViewModel { Text = "Row9", Number = 9 });
+        /// <returns> </returns>
+        protected ObservableCollection<TestDataViewModel> CreateDataSource() {
+            var res = new ObservableCollection<TestDataViewModel>();
+            res.Add(new TestDataViewModel {Text = GetDataFromService(0), Number = 0});
+            res.Add(new TestDataViewModel {Text = GetDataFromService(1), Number = 1});
+            res.Add(new TestDataViewModel {Text = GetDataFromService(2), Number = 2});
+            res.Add(new TestDataViewModel {Text = GetDataFromService(3), Number = 3});
+            res.Add(new TestDataViewModel {Text = "Row4", Number = 4});
+            res.Add(new TestDataViewModel {Text = "Row5", Number = 5});
+            res.Add(new TestDataViewModel {Text = "Row6", Number = 6});
+            res.Add(new TestDataViewModel {Text = "Row7", Number = 7});
+            res.Add(new TestDataViewModel {Text = "Row8", Number = 8});
+            res.Add(new TestDataViewModel {Text = "Row9", Number = 9});
             return res;
         }
 
-        private string GetDataFromService(int dataId)
-        {
-
+        private string GetDataFromService(int dataId) {
             ServicePointManager.ServerCertificateValidationCallback += customXertificateValidation;
 
-            using (var proxy = new DvServiceClient())
-            {
+            using (var proxy = new DvServiceClient()) {
                 var data = proxy.GetData(dataId);
                 return data;
             }
         }
 
-        private static bool customXertificateValidation(object sender, X509Certificate cert, X509Chain chain, SslPolicyErrors error)
-        {
-            var certificate = (X509Certificate2)cert;
+        private static bool customXertificateValidation(object sender, X509Certificate cert, X509Chain chain, SslPolicyErrors error) {
+            var certificate = (X509Certificate2) cert;
 
             // Inspect the server certficiate here to validate 
             // that you are dealing with the correct server.
@@ -243,14 +173,10 @@ namespace DataVehicles4.Client
         }
 
         /// <summary>
-        /// Gets Data.
+        ///   Gets Data.
         /// </summary>
-        public ObservableCollection<TestDataViewModel> Data
-        {
-            get
-            {
-                return source;
-            }
+        public ObservableCollection<TestDataViewModel> Data {
+            get { return source; }
         }
     }
 }
