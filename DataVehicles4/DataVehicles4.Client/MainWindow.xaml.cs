@@ -18,6 +18,7 @@ namespace DataVehicles4.Client {
         public MainWindow() {
             InitializeComponent();
             DataContext = new DataSource();
+            new Welcome().ShowDialog();
         }
     }
 
@@ -155,8 +156,6 @@ namespace DataVehicles4.Client {
         }
 
         private string GetDataFromService(int dataId) {
-            ServicePointManager.ServerCertificateValidationCallback += customXertificateValidation;
-
             using (var proxy = new DvServiceClient()) {
                 var data = proxy.GetData(dataId);
                 return data;

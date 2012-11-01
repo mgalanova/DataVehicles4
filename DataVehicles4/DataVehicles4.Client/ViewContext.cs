@@ -1,6 +1,6 @@
 ﻿#region Usings
 
-using System;
+using System.Linq;
 using System.Windows;
 using DataVehicle4.ViewModel;
 
@@ -8,12 +8,8 @@ using DataVehicle4.ViewModel;
 
 namespace DataVehicles4.Client {
     public class ViewContext : IViewContext {
-        public void ShowMainWindow() {
-            var window = new MainWindow();
-            var loginWindow = Application.Current.Windows[0];
-            Application.Current.MainWindow = window;
-            window.Show();
-            loginWindow.Close();
+        public void CloseWelcome() {
+            Application.Current.Windows.OfType<Welcome>().Single().Close();
         }
     }
 }

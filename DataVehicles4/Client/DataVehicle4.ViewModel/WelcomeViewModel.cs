@@ -16,10 +16,11 @@ namespace DataVehicle4.ViewModel {
 
         public string UserLogin { get; set; }
         public string Password { get; set; }
+        public bool RememberMe { get; set; }
         public ICommand LogInCommand { get; private set; }
 
         private void LogIn() {
-            context.ShowMainWindow();
+            context.CloseWelcome();
         }
     }
 }
