@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1354523D-184F-4442-8405-FD3BE986FAFC}</ProjectGuid>
+    <ProjectGuid>{C47FAA64-D367-4C37-A82F-2982FC4F7A6A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DataVehicles.Domain</RootNamespace>
-    <AssemblyName>DataVehicles.Domain</AssemblyName>
+    <RootNamespace>DataVehicles4.ApplicationUseCase</RootNamespace>
+    <AssemblyName>DataVehicles4.ApplicationUseCase</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,7 +33,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,9 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\User.cs" />
-    <Compile Include="CompositeType.cs" />
+    <Compile Include="AdminService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataVehicles.Domain\DataVehicles.Domain.csproj">
+      <Project>{1354523d-184f-4442-8405-fd3be986fafc}</Project>
+      <Name>DataVehicles.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataVehicles4.DataAccess\DataVehicles4.DataAccess.csproj">
+      <Project>{f16fb24b-e0ab-4b99-9477-186dcafcc3c7}</Project>
+      <Name>DataVehicles4.DataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

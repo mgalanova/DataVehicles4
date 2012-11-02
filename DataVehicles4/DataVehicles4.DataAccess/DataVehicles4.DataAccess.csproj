@@ -69,6 +69,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AdminModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Users\AdminRepository.cs" />
     <Compile Include="Users\cache.cs">
       <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
@@ -78,7 +79,6 @@
     <Compile Include="Users\data_bases.cs">
       <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Users\IAdminRepository.cs" />
     <Compile Include="Users\individual_info.cs">
       <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
@@ -124,6 +124,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataVehicles.Domain\DataVehicles.Domain.csproj">
+      <Project>{1354523D-184F-4442-8405-FD3BE986FAFC}</Project>
+      <Name>DataVehicles.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

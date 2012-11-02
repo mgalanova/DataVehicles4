@@ -41,6 +41,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.0.1.10\lib\net40\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -96,6 +99,13 @@
       <Project>{1354523D-184F-4442-8405-FD3BE986FAFC}</Project>
       <Name>DataVehicles.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Server\DataVehicles4.ApplicationUseCase\DataVehicles4.ApplicationUseCase.csproj">
+      <Project>{c47faa64-d367-4c37-a82f-2982fc4f7a6a}</Project>
+      <Name>DataVehicles4.ApplicationUseCase</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

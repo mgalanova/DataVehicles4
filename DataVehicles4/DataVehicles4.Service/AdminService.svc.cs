@@ -7,7 +7,7 @@ using System;
 namespace DataVehicles4.Service {
     public class AdminService : IAdminService {
         public bool Authorize(string userLogin, string password) {
-            throw new NotImplementedException();
+            return new ApplicationUseCase.AdminService().Authorize(userLogin, password);
         }
     }
 }
