@@ -38,10 +38,14 @@
       <HintPath>..\packages\Ninject.3.0.1.10\lib\net40\Ninject.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
@@ -50,7 +54,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DomainTests\WhenAuthorizeUser.cs" />
+    <Compile Include="DSL\ContextFake.cs" />
     <Compile Include="DSL\Extensions.cs" />
+    <Compile Include="DSL\TestDependencyContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DSL\ViewContextFake.cs" />
     <Compile Include="WhenUserLogin.cs" />
@@ -63,6 +69,10 @@
     <ProjectReference Include="..\DataVehicles.Domain\DataVehicles.Domain.csproj">
       <Project>{1354523D-184F-4442-8405-FD3BE986FAFC}</Project>
       <Name>DataVehicles.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataVehicles4.ServiceProxy\DataVehicles4.ServiceProxy.csproj">
+      <Project>{1D2B50BA-6910-41A7-93C7-B2484CD0E734}</Project>
+      <Name>DataVehicles4.ServiceProxy</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

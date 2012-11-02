@@ -9,11 +9,11 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace DataVehicles4.UnitTests {
     [TestClass]
     public class WhenUserLogin {
-        private ViewContextFake context;
+        private ContextFake context;
 
         [TestInitialize]
         public void Init() {
-            context = new ViewContextFake();
+            context = new ContextFake();
         }
 
         [TestMethod]
@@ -22,7 +22,7 @@ namespace DataVehicles4.UnitTests {
 
             viewModel.LogInCommand.Execute();
 
-            Assert.IsFalse(context.IsWelcomeVisible);
+            Assert.IsFalse(context.View.IsWelcomeVisible);
         }
     }
 }

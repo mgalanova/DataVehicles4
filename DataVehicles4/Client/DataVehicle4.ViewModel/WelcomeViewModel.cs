@@ -1,15 +1,17 @@
 ﻿#region Usings
 
 using System;
+using System.Windows;
 using System.Windows.Input;
+using DataVehicles4.ServiceProxy.AdminServiceReference;
 
 #endregion
 
 namespace DataVehicle4.ViewModel {
     public class WelcomeViewModel : ViewModel {
-        private readonly IViewContext context;
+        private readonly IContext context;
 
-        public WelcomeViewModel(IViewContext context) {
+        public WelcomeViewModel(IContext context) {
             this.context = context;
             LogInCommand = new Command(LogIn);
         }
@@ -20,7 +22,15 @@ namespace DataVehicle4.ViewModel {
         public ICommand LogInCommand { get; private set; }
 
         private void LogIn() {
-            context.CloseWelcome();
+            if (!AdminService.Authorize(UserLogin, Password)) {
+                throw new ApplicationException("You are not authorized");
+            }
+
+            context.View.CloseWelcome();
+        }
+
+        private IAdminService AdminService {
+            get { return context.Service<IAdminService>(); }
         }
     }
 }

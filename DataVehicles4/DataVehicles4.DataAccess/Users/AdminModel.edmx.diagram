@@ -4,26 +4,26 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ca5e30ce83bd491184f9ba0ca2f882b9" Name="Diagram1">
-        <EntityTypeShape EntityType="AdminModel.cache" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdminModel.data_bases" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdminModel.database_type" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdminModel.individual_info" Width="1.5" PointX="7.5" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdminModel.restrict" Width="1.5" PointX="8.25" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdminModel.user" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdminModel.user_has_restrict" Width="1.5" PointX="10.5" PointY="5.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdminModel.user_has_restrict_fields" Width="1.5" PointX="10.5" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdminModel.user_pivot" Width="1.5" PointX="7.5" PointY="7.125" IsExpanded="true" />
-        <AssociationConnector Association="AdminModel.fk_data_bases_database_type1" ManuallyRouted="false" />
-        <AssociationConnector Association="AdminModel.fk_user_has_restrict_data_bases1" ManuallyRouted="false" />
-        <AssociationConnector Association="AdminModel.fk_user_has_restrict_fields_data_bases1" ManuallyRouted="false" />
-        <AssociationConnector Association="AdminModel.fk_individual_info_user1" ManuallyRouted="false" />
-        <AssociationConnector Association="AdminModel.fk_user_has_restrict_fields_restrict1" ManuallyRouted="false" />
-        <AssociationConnector Association="AdminModel.fk_user_has_restrict_restrict1" ManuallyRouted="false" />
-        <AssociationConnector Association="AdminModel.fk_user_has_restrict_fields_user1" ManuallyRouted="false" />
-        <AssociationConnector Association="AdminModel.fk_user_has_restrict_user1" ManuallyRouted="false" />
-        <AssociationConnector Association="AdminModel.fk_user_pivot_user" ManuallyRouted="false" />
-        <AssociationConnector Association="AdminModel.user_has_data_bases" ManuallyRouted="false" />
+      <Diagram DiagramId="ca5e30ce83bd491184f9ba0ca2f882b9" Name="Diagram1" ZoomLevel="38">
+        <EntityTypeShape EntityType="AdminModel.cache" Width="1.5" PointX="6" PointY="12.25" />
+        <EntityTypeShape EntityType="AdminModel.data_bases" Width="1.5" PointX="9" PointY="13.75" />
+        <EntityTypeShape EntityType="AdminModel.database_type" Width="1.5" PointX="12" PointY="15.25" />
+        <EntityTypeShape EntityType="AdminModel.individual_info" Width="1.5" PointX="15" PointY="16.75" />
+        <EntityTypeShape EntityType="AdminModel.restrict" Width="1.5" PointX="18" PointY="18.25" />
+        <EntityTypeShape EntityType="AdminModel.user" Width="1.5" PointX="0.5" PointY="19.75" />
+        <EntityTypeShape EntityType="AdminModel.user_has_restrict" Width="1.5" PointX="3" PointY="21.25" />
+        <EntityTypeShape EntityType="AdminModel.user_has_restrict_fields" Width="1.5" PointX="6" PointY="22.75" />
+        <EntityTypeShape EntityType="AdminModel.user_pivot" Width="1.5" PointX="9" PointY="24.25" />
+        <AssociationConnector Association="AdminModel.fk_data_bases_database_type1" />
+        <AssociationConnector Association="AdminModel.fk_user_has_restrict_data_bases1" />
+        <AssociationConnector Association="AdminModel.fk_user_has_restrict_fields_data_bases1" />
+        <AssociationConnector Association="AdminModel.fk_individual_info_user1" />
+        <AssociationConnector Association="AdminModel.fk_user_has_restrict_fields_restrict1" />
+        <AssociationConnector Association="AdminModel.fk_user_has_restrict_restrict1" />
+        <AssociationConnector Association="AdminModel.fk_user_has_restrict_fields_user1" />
+        <AssociationConnector Association="AdminModel.fk_user_has_restrict_user1" />
+        <AssociationConnector Association="AdminModel.fk_user_pivot_user" />
+        <AssociationConnector Association="AdminModel.user_has_data_bases" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
