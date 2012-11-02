@@ -210,6 +210,7 @@ CREATE TABLE dbo.[user] (
 
 SET IDENTITY_INSERT dbo.[user] ON
 INSERT INTO dbo.[user] (id, [login], pwd_hash, name, reg_date, rights, max_install, cur_install, lang) VALUES
+(1, 'test', 'test', 'Test User', GETUTCDATE(), 1, 1000, 14, 'en_us'),
 (2, 'Art_dance', 'dYxThFnH', 'Alexander L. Kozlov', '2010-12-28', 1, 1000, 14, 'en_us'),
 (3, 'Nissan', 'komiclut', 'Niss3c346', '2010-12-28', 0, 12, 7, 'en_us'),
 (4, 'Sojitz', 'wrikuwru', 'Soj3d156', '2011-01-05', 0, 3, 0, 'en_us'),
