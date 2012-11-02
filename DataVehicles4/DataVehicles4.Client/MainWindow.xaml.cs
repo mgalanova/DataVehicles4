@@ -156,7 +156,7 @@ namespace DataVehicles4.Client {
         }
 
         private string GetDataFromService(int dataId) {
-            using (var proxy = new DvServiceClient()) {
+            using (var proxy = new DvServiceClient("DvService")) {
                 var data = proxy.GetData(dataId);
                 return data;
             }

@@ -1,0 +1,717 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AdminModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="AdminModelStoreContainer">
+          <EntitySet Name="cache" EntityType="AdminModel.Store.cache" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="data_bases" EntityType="AdminModel.Store.data_bases" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="database_type" EntityType="AdminModel.Store.database_type" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="individual_info" EntityType="AdminModel.Store.individual_info" store:Type="Tables" store:Schema="dbo" store:Name="individual_info">
+            <DefiningQuery>SELECT 
+      [individual_info].[value] AS [value], 
+      [individual_info].[user_id] AS [user_id]
+      FROM [dbo].[individual_info] AS [individual_info]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="restrict" EntityType="AdminModel.Store.restrict" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="user" EntityType="AdminModel.Store.user" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="user_has_data_bases" EntityType="AdminModel.Store.user_has_data_bases" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="user_has_restrict" EntityType="AdminModel.Store.user_has_restrict" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="user_has_restrict_fields" EntityType="AdminModel.Store.user_has_restrict_fields" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="user_pivot" EntityType="AdminModel.Store.user_pivot" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="fk_data_bases_database_type1" Association="AdminModel.Store.fk_data_bases_database_type1">
+            <End Role="database_type" EntitySet="database_type" />
+            <End Role="data_bases" EntitySet="data_bases" />
+          </AssociationSet>
+          <AssociationSet Name="fk_individual_info_user1" Association="AdminModel.Store.fk_individual_info_user1">
+            <End Role="user" EntitySet="user" />
+            <End Role="individual_info" EntitySet="individual_info" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_has_data_bases_data_bases1" Association="AdminModel.Store.fk_user_has_data_bases_data_bases1">
+            <End Role="data_bases" EntitySet="data_bases" />
+            <End Role="user_has_data_bases" EntitySet="user_has_data_bases" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_has_data_bases_user1" Association="AdminModel.Store.fk_user_has_data_bases_user1">
+            <End Role="user" EntitySet="user" />
+            <End Role="user_has_data_bases" EntitySet="user_has_data_bases" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_has_restrict_data_bases1" Association="AdminModel.Store.fk_user_has_restrict_data_bases1">
+            <End Role="data_bases" EntitySet="data_bases" />
+            <End Role="user_has_restrict" EntitySet="user_has_restrict" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_has_restrict_fields_data_bases1" Association="AdminModel.Store.fk_user_has_restrict_fields_data_bases1">
+            <End Role="data_bases" EntitySet="data_bases" />
+            <End Role="user_has_restrict_fields" EntitySet="user_has_restrict_fields" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_has_restrict_fields_restrict1" Association="AdminModel.Store.fk_user_has_restrict_fields_restrict1">
+            <End Role="restrict" EntitySet="restrict" />
+            <End Role="user_has_restrict_fields" EntitySet="user_has_restrict_fields" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_has_restrict_fields_user1" Association="AdminModel.Store.fk_user_has_restrict_fields_user1">
+            <End Role="user" EntitySet="user" />
+            <End Role="user_has_restrict_fields" EntitySet="user_has_restrict_fields" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_has_restrict_restrict1" Association="AdminModel.Store.fk_user_has_restrict_restrict1">
+            <End Role="restrict" EntitySet="restrict" />
+            <End Role="user_has_restrict" EntitySet="user_has_restrict" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_has_restrict_user1" Association="AdminModel.Store.fk_user_has_restrict_user1">
+            <End Role="user" EntitySet="user" />
+            <End Role="user_has_restrict" EntitySet="user_has_restrict" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_pivot_user" Association="AdminModel.Store.fk_user_pivot_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="user_pivot" EntitySet="user_pivot" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="cache">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="varchar" Nullable="false" MaxLength="128" />
+          <Property Name="expire" Type="int" />
+          <Property Name="value" Type="binary" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="data_bases">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="varchar" MaxLength="100" />
+          <Property Name="caption" Type="varchar" Nullable="false" MaxLength="45" />
+          <Property Name="database_type_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="database_type">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'abiz_admin.dbo.individual_info' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="individual_info">
+          <Key>
+            <PropertyRef Name="value" />
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="value" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="restrict">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="field_name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="client_caption" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="child_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="login" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="pwd_hash" Type="varchar" Nullable="false" MaxLength="32" />
+          <Property Name="name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="reg_date" Type="date" Nullable="false" />
+          <Property Name="rights" Type="int" Nullable="false" />
+          <Property Name="max_install" Type="int" Nullable="false" />
+          <Property Name="cur_install" Type="int" Nullable="false" />
+          <Property Name="lang" Type="varchar" Nullable="false" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="user_has_data_bases">
+          <Key>
+            <PropertyRef Name="user_id" />
+            <PropertyRef Name="data_bases_id" />
+          </Key>
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="data_bases_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="user_has_restrict">
+          <Key>
+            <PropertyRef Name="user_id" />
+            <PropertyRef Name="restrict_id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="restrict_id" Type="int" Nullable="false" />
+          <Property Name="value" Type="int" Nullable="false" />
+          <Property Name="data_bases_id" Type="int" Nullable="false" />
+          <Property Name="lft" Type="int" Nullable="false" />
+          <Property Name="rgt" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="user_has_restrict_fields">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="user_id" />
+            <PropertyRef Name="restrict_id" />
+            <PropertyRef Name="data_bases_id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="restrict_id" Type="int" Nullable="false" />
+          <Property Name="data_bases_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="user_pivot">
+          <Key>
+            <PropertyRef Name="pivot_id" />
+          </Key>
+          <Property Name="pivot_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="pivot_name" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="tabDatabaseId" Type="int" Nullable="false" />
+          <Property Name="tabFieldsArrHeader" Type="varchar" Nullable="false" MaxLength="2048" />
+          <Property Name="tabFieldsArrLeft" Type="varchar" Nullable="false" MaxLength="2048" />
+          <Property Name="tabCritActive" Type="varchar" Nullable="false" MaxLength="2048" />
+          <Property Name="tabFieldsFilterArr" Type="varchar" Nullable="false" MaxLength="2048" />
+          <Property Name="tabFieldsSortArr" Type="varchar" Nullable="false" MaxLength="2048" />
+        </EntityType>
+        <Association Name="fk_data_bases_database_type1">
+          <End Role="database_type" Type="AdminModel.Store.database_type" Multiplicity="1" />
+          <End Role="data_bases" Type="AdminModel.Store.data_bases" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="database_type">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="data_bases">
+              <PropertyRef Name="database_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_individual_info_user1">
+          <End Role="user" Type="AdminModel.Store.user" Multiplicity="1" />
+          <End Role="individual_info" Type="AdminModel.Store.individual_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="individual_info">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_user_has_data_bases_data_bases1">
+          <End Role="data_bases" Type="AdminModel.Store.data_bases" Multiplicity="1" />
+          <End Role="user_has_data_bases" Type="AdminModel.Store.user_has_data_bases" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="data_bases">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user_has_data_bases">
+              <PropertyRef Name="data_bases_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_user_has_data_bases_user1">
+          <End Role="user" Type="AdminModel.Store.user" Multiplicity="1" />
+          <End Role="user_has_data_bases" Type="AdminModel.Store.user_has_data_bases" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user_has_data_bases">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_user_has_restrict_data_bases1">
+          <End Role="data_bases" Type="AdminModel.Store.data_bases" Multiplicity="1" />
+          <End Role="user_has_restrict" Type="AdminModel.Store.user_has_restrict" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="data_bases">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user_has_restrict">
+              <PropertyRef Name="data_bases_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_user_has_restrict_fields_data_bases1">
+          <End Role="data_bases" Type="AdminModel.Store.data_bases" Multiplicity="1" />
+          <End Role="user_has_restrict_fields" Type="AdminModel.Store.user_has_restrict_fields" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="data_bases">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user_has_restrict_fields">
+              <PropertyRef Name="data_bases_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_user_has_restrict_fields_restrict1">
+          <End Role="restrict" Type="AdminModel.Store.restrict" Multiplicity="1" />
+          <End Role="user_has_restrict_fields" Type="AdminModel.Store.user_has_restrict_fields" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="restrict">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user_has_restrict_fields">
+              <PropertyRef Name="restrict_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_user_has_restrict_fields_user1">
+          <End Role="user" Type="AdminModel.Store.user" Multiplicity="1" />
+          <End Role="user_has_restrict_fields" Type="AdminModel.Store.user_has_restrict_fields" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user_has_restrict_fields">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_user_has_restrict_restrict1">
+          <End Role="restrict" Type="AdminModel.Store.restrict" Multiplicity="1" />
+          <End Role="user_has_restrict" Type="AdminModel.Store.user_has_restrict" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="restrict">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user_has_restrict">
+              <PropertyRef Name="restrict_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_user_has_restrict_user1">
+          <End Role="user" Type="AdminModel.Store.user" Multiplicity="1" />
+          <End Role="user_has_restrict" Type="AdminModel.Store.user_has_restrict" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user_has_restrict">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_user_pivot_user">
+          <End Role="user" Type="AdminModel.Store.user" Multiplicity="1" />
+          <End Role="user_pivot" Type="AdminModel.Store.user_pivot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user_pivot">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AdminModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="caches" EntityType="AdminModel.cache" />
+          <EntitySet Name="data_bases" EntityType="AdminModel.data_bases" />
+          <EntitySet Name="database_type" EntityType="AdminModel.database_type" />
+          <EntitySet Name="individual_info" EntityType="AdminModel.individual_info" />
+          <EntitySet Name="restricts" EntityType="AdminModel.restrict" />
+          <EntitySet Name="users" EntityType="AdminModel.user" />
+          <EntitySet Name="user_has_restrict" EntityType="AdminModel.user_has_restrict" />
+          <EntitySet Name="user_has_restrict_fields" EntityType="AdminModel.user_has_restrict_fields" />
+          <EntitySet Name="user_pivot" EntityType="AdminModel.user_pivot" />
+          <AssociationSet Name="fk_data_bases_database_type1" Association="AdminModel.fk_data_bases_database_type1">
+            <End Role="database_type" EntitySet="database_type" />
+            <End Role="data_bases" EntitySet="data_bases" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_has_restrict_data_bases1" Association="AdminModel.fk_user_has_restrict_data_bases1">
+            <End Role="data_bases" EntitySet="data_bases" />
+            <End Role="user_has_restrict" EntitySet="user_has_restrict" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_has_restrict_fields_data_bases1" Association="AdminModel.fk_user_has_restrict_fields_data_bases1">
+            <End Role="data_bases" EntitySet="data_bases" />
+            <End Role="user_has_restrict_fields" EntitySet="user_has_restrict_fields" />
+          </AssociationSet>
+          <AssociationSet Name="fk_individual_info_user1" Association="AdminModel.fk_individual_info_user1">
+            <End Role="user" EntitySet="users" />
+            <End Role="individual_info" EntitySet="individual_info" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_has_restrict_fields_restrict1" Association="AdminModel.fk_user_has_restrict_fields_restrict1">
+            <End Role="restrict" EntitySet="restricts" />
+            <End Role="user_has_restrict_fields" EntitySet="user_has_restrict_fields" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_has_restrict_restrict1" Association="AdminModel.fk_user_has_restrict_restrict1">
+            <End Role="restrict" EntitySet="restricts" />
+            <End Role="user_has_restrict" EntitySet="user_has_restrict" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_has_restrict_fields_user1" Association="AdminModel.fk_user_has_restrict_fields_user1">
+            <End Role="user" EntitySet="users" />
+            <End Role="user_has_restrict_fields" EntitySet="user_has_restrict_fields" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_has_restrict_user1" Association="AdminModel.fk_user_has_restrict_user1">
+            <End Role="user" EntitySet="users" />
+            <End Role="user_has_restrict" EntitySet="user_has_restrict" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_pivot_user" Association="AdminModel.fk_user_pivot_user">
+            <End Role="user" EntitySet="users" />
+            <End Role="user_pivot" EntitySet="user_pivot" />
+          </AssociationSet>
+          <AssociationSet Name="user_has_data_bases" Association="AdminModel.user_has_data_bases">
+            <End Role="data_bases" EntitySet="data_bases" />
+            <End Role="user" EntitySet="users" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="cache">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+          <Property Name="expire" Type="Int32" />
+          <Property Name="value" Type="Binary" MaxLength="1" FixedLength="true" />
+        </EntityType>
+        <EntityType Name="data_bases">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="caption" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="database_type" Relationship="AdminModel.fk_data_bases_database_type1" FromRole="data_bases" ToRole="database_type" />
+          <NavigationProperty Name="user_has_restrict" Relationship="AdminModel.fk_user_has_restrict_data_bases1" FromRole="data_bases" ToRole="user_has_restrict" />
+          <NavigationProperty Name="user_has_restrict_fields" Relationship="AdminModel.fk_user_has_restrict_fields_data_bases1" FromRole="data_bases" ToRole="user_has_restrict_fields" />
+          <NavigationProperty Name="users" Relationship="AdminModel.user_has_data_bases" FromRole="data_bases" ToRole="user" />
+        </EntityType>
+        <EntityType Name="database_type">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="data_bases" Relationship="AdminModel.fk_data_bases_database_type1" FromRole="database_type" ToRole="data_bases" />
+        </EntityType>
+        <EntityType Name="individual_info">
+          <Key>
+            <PropertyRef Name="value" />
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="value" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="user" Relationship="AdminModel.fk_individual_info_user1" FromRole="individual_info" ToRole="user" />
+        </EntityType>
+        <EntityType Name="restrict">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="field_name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="client_caption" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="child_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="user_has_restrict_fields" Relationship="AdminModel.fk_user_has_restrict_fields_restrict1" FromRole="restrict" ToRole="user_has_restrict_fields" />
+          <NavigationProperty Name="user_has_restrict" Relationship="AdminModel.fk_user_has_restrict_restrict1" FromRole="restrict" ToRole="user_has_restrict" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="login" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="pwd_hash" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="reg_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="rights" Type="Int32" Nullable="false" />
+          <Property Name="max_install" Type="Int32" Nullable="false" />
+          <Property Name="cur_install" Type="Int32" Nullable="false" />
+          <Property Name="lang" Type="String" Nullable="false" MaxLength="16" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="individual_info" Relationship="AdminModel.fk_individual_info_user1" FromRole="user" ToRole="individual_info" />
+          <NavigationProperty Name="user_has_restrict_fields" Relationship="AdminModel.fk_user_has_restrict_fields_user1" FromRole="user" ToRole="user_has_restrict_fields" />
+          <NavigationProperty Name="user_has_restrict" Relationship="AdminModel.fk_user_has_restrict_user1" FromRole="user" ToRole="user_has_restrict" />
+          <NavigationProperty Name="user_pivot" Relationship="AdminModel.fk_user_pivot_user" FromRole="user" ToRole="user_pivot" />
+          <NavigationProperty Name="data_bases" Relationship="AdminModel.user_has_data_bases" FromRole="user" ToRole="data_bases" />
+        </EntityType>
+        <EntityType Name="user_has_restrict">
+          <Key>
+            <PropertyRef Name="user_id" />
+            <PropertyRef Name="restrict_id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="restrict_id" Type="Int32" Nullable="false" />
+          <Property Name="value" Type="Int32" Nullable="false" />
+          <Property Name="lft" Type="Int32" Nullable="false" />
+          <Property Name="rgt" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="data_bases" Relationship="AdminModel.fk_user_has_restrict_data_bases1" FromRole="user_has_restrict" ToRole="data_bases" />
+          <NavigationProperty Name="restrict" Relationship="AdminModel.fk_user_has_restrict_restrict1" FromRole="user_has_restrict" ToRole="restrict" />
+          <NavigationProperty Name="user" Relationship="AdminModel.fk_user_has_restrict_user1" FromRole="user_has_restrict" ToRole="user" />
+        </EntityType>
+        <EntityType Name="user_has_restrict_fields">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="user_id" />
+            <PropertyRef Name="restrict_id" />
+            <PropertyRef Name="data_bases_id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="restrict_id" Type="Int32" Nullable="false" />
+          <Property Name="data_bases_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="data_bases" Relationship="AdminModel.fk_user_has_restrict_fields_data_bases1" FromRole="user_has_restrict_fields" ToRole="data_bases" />
+          <NavigationProperty Name="restrict" Relationship="AdminModel.fk_user_has_restrict_fields_restrict1" FromRole="user_has_restrict_fields" ToRole="restrict" />
+          <NavigationProperty Name="user" Relationship="AdminModel.fk_user_has_restrict_fields_user1" FromRole="user_has_restrict_fields" ToRole="user" />
+        </EntityType>
+        <EntityType Name="user_pivot">
+          <Key>
+            <PropertyRef Name="pivot_id" />
+          </Key>
+          <Property Name="pivot_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pivot_name" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="tabDatabaseId" Type="Int32" Nullable="false" />
+          <Property Name="tabFieldsArrHeader" Type="String" Nullable="false" MaxLength="2048" Unicode="false" FixedLength="false" />
+          <Property Name="tabFieldsArrLeft" Type="String" Nullable="false" MaxLength="2048" Unicode="false" FixedLength="false" />
+          <Property Name="tabCritActive" Type="String" Nullable="false" MaxLength="2048" Unicode="false" FixedLength="false" />
+          <Property Name="tabFieldsFilterArr" Type="String" Nullable="false" MaxLength="2048" Unicode="false" FixedLength="false" />
+          <Property Name="tabFieldsSortArr" Type="String" Nullable="false" MaxLength="2048" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="user" Relationship="AdminModel.fk_user_pivot_user" FromRole="user_pivot" ToRole="user" />
+        </EntityType>
+        <Association Name="fk_data_bases_database_type1">
+          <End Role="database_type" Type="AdminModel.database_type" Multiplicity="1" />
+          <End Role="data_bases" Type="AdminModel.data_bases" Multiplicity="*" />
+        </Association>
+        <Association Name="fk_user_has_restrict_data_bases1">
+          <End Role="data_bases" Type="AdminModel.data_bases" Multiplicity="1" />
+          <End Role="user_has_restrict" Type="AdminModel.user_has_restrict" Multiplicity="*" />
+        </Association>
+        <Association Name="fk_user_has_restrict_fields_data_bases1">
+          <End Role="data_bases" Type="AdminModel.data_bases" Multiplicity="1" />
+          <End Role="user_has_restrict_fields" Type="AdminModel.user_has_restrict_fields" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="data_bases">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user_has_restrict_fields">
+              <PropertyRef Name="data_bases_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_individual_info_user1">
+          <End Role="user" Type="AdminModel.user" Multiplicity="1" />
+          <End Role="individual_info" Type="AdminModel.individual_info" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="individual_info">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_user_has_restrict_fields_restrict1">
+          <End Role="restrict" Type="AdminModel.restrict" Multiplicity="1" />
+          <End Role="user_has_restrict_fields" Type="AdminModel.user_has_restrict_fields" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="restrict">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user_has_restrict_fields">
+              <PropertyRef Name="restrict_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_user_has_restrict_restrict1">
+          <End Role="restrict" Type="AdminModel.restrict" Multiplicity="1" />
+          <End Role="user_has_restrict" Type="AdminModel.user_has_restrict" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="restrict">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user_has_restrict">
+              <PropertyRef Name="restrict_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_user_has_restrict_fields_user1">
+          <End Role="user" Type="AdminModel.user" Multiplicity="1" />
+          <End Role="user_has_restrict_fields" Type="AdminModel.user_has_restrict_fields" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user_has_restrict_fields">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_user_has_restrict_user1">
+          <End Role="user" Type="AdminModel.user" Multiplicity="1" />
+          <End Role="user_has_restrict" Type="AdminModel.user_has_restrict" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user_has_restrict">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_user_pivot_user">
+          <End Role="user" Type="AdminModel.user" Multiplicity="1" />
+          <End Role="user_pivot" Type="AdminModel.user_pivot" Multiplicity="*" />
+        </Association>
+        <Association Name="user_has_data_bases">
+          <End Role="data_bases" Type="AdminModel.data_bases" Multiplicity="*" />
+          <End Role="user" Type="AdminModel.user" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AdminModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="caches">
+            <EntityTypeMapping TypeName="AdminModel.cache">
+              <MappingFragment StoreEntitySet="cache">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="expire" ColumnName="expire" />
+                <ScalarProperty Name="value" ColumnName="value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="data_bases">
+            <EntityTypeMapping TypeName="AdminModel.data_bases">
+              <MappingFragment StoreEntitySet="data_bases">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="caption" ColumnName="caption" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="database_type">
+            <EntityTypeMapping TypeName="AdminModel.database_type">
+              <MappingFragment StoreEntitySet="database_type">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="individual_info">
+            <EntityTypeMapping TypeName="AdminModel.individual_info">
+              <MappingFragment StoreEntitySet="individual_info">
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="restricts">
+            <EntityTypeMapping TypeName="AdminModel.restrict">
+              <MappingFragment StoreEntitySet="restrict">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="field_name" ColumnName="field_name" />
+                <ScalarProperty Name="client_caption" ColumnName="client_caption" />
+                <ScalarProperty Name="child_id" ColumnName="child_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="AdminModel.user">
+              <MappingFragment StoreEntitySet="user">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="login" ColumnName="login" />
+                <ScalarProperty Name="pwd_hash" ColumnName="pwd_hash" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="reg_date" ColumnName="reg_date" />
+                <ScalarProperty Name="rights" ColumnName="rights" />
+                <ScalarProperty Name="max_install" ColumnName="max_install" />
+                <ScalarProperty Name="cur_install" ColumnName="cur_install" />
+                <ScalarProperty Name="lang" ColumnName="lang" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user_has_restrict">
+            <EntityTypeMapping TypeName="AdminModel.user_has_restrict">
+              <MappingFragment StoreEntitySet="user_has_restrict">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="restrict_id" ColumnName="restrict_id" />
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="lft" ColumnName="lft" />
+                <ScalarProperty Name="rgt" ColumnName="rgt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user_has_restrict_fields">
+            <EntityTypeMapping TypeName="AdminModel.user_has_restrict_fields">
+              <MappingFragment StoreEntitySet="user_has_restrict_fields">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="restrict_id" ColumnName="restrict_id" />
+                <ScalarProperty Name="data_bases_id" ColumnName="data_bases_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user_pivot">
+            <EntityTypeMapping TypeName="AdminModel.user_pivot">
+              <MappingFragment StoreEntitySet="user_pivot">
+                <ScalarProperty Name="pivot_id" ColumnName="pivot_id" />
+                <ScalarProperty Name="pivot_name" ColumnName="pivot_name" />
+                <ScalarProperty Name="tabDatabaseId" ColumnName="tabDatabaseId" />
+                <ScalarProperty Name="tabFieldsArrHeader" ColumnName="tabFieldsArrHeader" />
+                <ScalarProperty Name="tabFieldsArrLeft" ColumnName="tabFieldsArrLeft" />
+                <ScalarProperty Name="tabCritActive" ColumnName="tabCritActive" />
+                <ScalarProperty Name="tabFieldsFilterArr" ColumnName="tabFieldsFilterArr" />
+                <ScalarProperty Name="tabFieldsSortArr" ColumnName="tabFieldsSortArr" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="fk_data_bases_database_type1" TypeName="AdminModel.fk_data_bases_database_type1" StoreEntitySet="data_bases">
+            <EndProperty Name="database_type">
+              <ScalarProperty Name="id" ColumnName="database_type_id" />
+            </EndProperty>
+            <EndProperty Name="data_bases">
+              <ScalarProperty Name="id" ColumnName="id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="fk_user_has_restrict_data_bases1" TypeName="AdminModel.fk_user_has_restrict_data_bases1" StoreEntitySet="user_has_restrict">
+            <EndProperty Name="data_bases">
+              <ScalarProperty Name="id" ColumnName="data_bases_id" />
+            </EndProperty>
+            <EndProperty Name="user_has_restrict">
+              <ScalarProperty Name="user_id" ColumnName="user_id" />
+              <ScalarProperty Name="restrict_id" ColumnName="restrict_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="fk_user_pivot_user" TypeName="AdminModel.fk_user_pivot_user" StoreEntitySet="user_pivot">
+            <EndProperty Name="user">
+              <ScalarProperty Name="id" ColumnName="user_id" />
+            </EndProperty>
+            <EndProperty Name="user_pivot">
+              <ScalarProperty Name="pivot_id" ColumnName="pivot_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="user_has_data_bases" TypeName="AdminModel.user_has_data_bases" StoreEntitySet="user_has_data_bases">
+            <EndProperty Name="data_bases">
+              <ScalarProperty Name="id" ColumnName="data_bases_id" />
+            </EndProperty>
+            <EndProperty Name="user">
+              <ScalarProperty Name="id" ColumnName="user_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
