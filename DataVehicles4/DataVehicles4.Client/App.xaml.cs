@@ -15,6 +15,9 @@ namespace DataVehicles4.Client {
                 using (var isolatedFileStream = new IsolatedStorageFileStream("userDvSettings", FileMode.Open, isolatedStorage)) {
                     using (var reader = new StreamReader(isolatedFileStream)) {
                         var loginAndPassword = reader.ReadToEnd().Split(new[] {'\r', '\n'}, StringSplitOptions.RemoveEmptyEntries);
+                        if (loginAndPassword.Count() < 2) {
+                            return;
+                        }
                         var login = loginAndPassword.First();
                         var password = loginAndPassword.Last();
                         Current.Properties["UserLogin"] = login;
@@ -26,16 +29,21 @@ namespace DataVehicles4.Client {
         }
 
         protected override void OnExit(ExitEventArgs e) {
-            using (var isolatedStorage = IsolatedStorageFile.GetMachineStoreForAssembly()) {
-                using (var isolatedFileStream = new IsolatedStorageFileStream("userDvSettings", FileMode.Create, isolatedStorage)) {
-                    using (var writer = new StreamWriter(isolatedFileStream)) {
-                        Save("UserLogin", writer);
-                        Save("Password", writer);
+            if ((bool) Current.GetPropertySafe("SuccessfullyLoggedIn")) {
+                using (var isolatedStorage = IsolatedStorageFile.GetMachineStoreForAssembly()) {
+                    using (var isolatedFileStream = new IsolatedStorageFileStream("userDvSettings", FileMode.Create, isolatedStorage)) {
+                        using (var writer = new StreamWriter(isolatedFileStream)) {
+                            if ((bool) Current.GetPropertySafe("RememberMe")) {
+                                Save("UserLogin", writer);
+                                Save("Password", writer);
+                            }
 
-                        writer.Flush();
+                            writer.Flush();
+                        }
                     }
                 }
             }
+
             base.OnExit(e);
         }
 

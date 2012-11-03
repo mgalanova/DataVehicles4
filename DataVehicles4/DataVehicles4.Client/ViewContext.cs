@@ -14,12 +14,12 @@ namespace DataVehicles4.Client {
             Application.Current.Windows.OfType<Welcome>().Single().Close();
         }
 
-        public void SaveProperty(string key, string value) {
+        public void SaveProperty(string key, object value) {
             Application.Current.Properties[key] = value;
         }
 
-        public string GetProperty(string key) {
-            return (string) Application.Current.Properties[key];
+        public object GetProperty(string key) {
+            return (string) Application.Current.GetPropertySafe(key);
         }
     }
 }

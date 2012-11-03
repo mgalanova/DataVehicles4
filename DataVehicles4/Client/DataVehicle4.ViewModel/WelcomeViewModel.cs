@@ -13,8 +13,11 @@ namespace DataVehicle4.ViewModel {
         public WelcomeViewModel(IContext context) {
             this.context = context;
             LogInCommand = new Command(LogIn);
-            UserLogin = context.Application.GetProperty("UserLogin");
-            Password = context.Application.GetProperty("Password");
+            UserLogin = (string) context.Application.GetProperty("UserLogin");
+            Password = (string) context.Application.GetProperty("Password");
+            if (!string.IsNullOrEmpty(UserLogin) || !string.IsNullOrEmpty(Password)) {
+                RememberMe = true;
+            }
         }
 
         public string UserLogin { get; set; }
@@ -27,8 +30,13 @@ namespace DataVehicle4.ViewModel {
                 throw new ApplicationException("You are not authorized");
             }
 
-            context.Application.SaveProperty("UserLogin", UserLogin);
-            context.Application.SaveProperty("Password", Password);
+            context.Application.SaveProperty("RememberMe", RememberMe);
+
+            if (RememberMe) {
+                context.Application.SaveProperty("UserLogin", UserLogin);
+                context.Application.SaveProperty("Password", Password);
+            }
+            context.Application.SaveProperty("SuccessfullyLoggedIn", true);
             context.Application.ShowMainWindow();
         }
 

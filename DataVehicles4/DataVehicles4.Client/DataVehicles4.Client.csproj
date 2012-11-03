@@ -76,6 +76,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ApplicationExtensions.cs" />
     <Compile Include="Context.cs" />
     <Compile Include="ViewContext.cs" />
     <Compile Include="Welcome.xaml.cs">

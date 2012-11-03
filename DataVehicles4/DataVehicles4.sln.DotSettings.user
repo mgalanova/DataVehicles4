@@ -2,6 +2,9 @@
 	<s:Boolean x:Key="/Default/Environment/SearchAndNavigation/MergeOccurences/@EntryValue">False</s:Boolean>
 	<s:String x:Key="/Default/Environment/UnitTesting/NUnitProvider/UseAddins/@EntryValue">Never</s:String>
 	<s:Boolean x:Key="/Default/Housekeeping/SolutionSettingsUpgraded/IsUpgraded/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=4B427427B8CC426BAD088632F4B7E2D6/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=4B427427B8CC426BAD088632F4B7E2D6/Name/@EntryValue">SaveLoginAndPasswordIfUserHitRememberMe</s:String>
+	<s:String x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestSessionPersistentData/=4B427427B8CC426BAD088632F4B7E2D6/XmlSerializedElements/@EntryValue">&lt;Session&gt;&lt;Elements&gt;&lt;UnitTestElement Provider="MSTest" Id="MsTest:DataVehicles4.UnitTests.WhenUserLogin" type="MsTestTestClassElement" TypeName="DataVehicles4.UnitTests.WhenUserLogin" Project="A47BE327-B508-4092-8AF6-93431DDE9B15" /&gt;&lt;UnitTestElement Provider="MSTest" Id="MsTest:DataVehicles4.UnitTests.WhenUserLogin.SaveLoginAndPasswordIfUserHitRememberMe" ParentId="MsTest:DataVehicles4.UnitTests.WhenUserLogin" type="MsTestTestMethodElement" MethodName="SaveLoginAndPasswordIfUserHitRememberMe" TypeName="DataVehicles4.UnitTests.WhenUserLogin" Project="A47BE327-B508-4092-8AF6-93431DDE9B15" /&gt;&lt;/Elements&gt;&lt;/Session&gt;</s:String>
 	
 	
 	</wpf:ResourceDictionary>
