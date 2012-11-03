@@ -10,18 +10,18 @@ namespace DataVehicles4.UnitTests.DSL {
         private readonly StandardKernel kernel;
 
         public ContextFake() {
-            View = new ViewContextFake();
+            Application = new ApplicationContextFake();
             kernel = new StandardKernel(new TestDependencyContainer());
         }
 
-        IViewContext IContext.View {
-            get { return View; }
+        IApplicationContext IContext.Application {
+            get { return Application; }
         }
 
         public TService Service<TService>() {
             return kernel.Get<TService>();
         }
 
-        public ViewContextFake View { get; private set; }
+        public ApplicationContextFake Application { get; private set; }
     }
 }

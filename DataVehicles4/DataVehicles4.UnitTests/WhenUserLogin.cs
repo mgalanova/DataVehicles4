@@ -22,7 +22,7 @@ namespace DataVehicles4.UnitTests {
 
             viewModel.LogInCommand.Execute();
 
-            Assert.IsFalse(context.View.IsWelcomeVisible);
+            Assert.IsTrue(context.Application.IsMainWindowShown);
         }
     }
 }

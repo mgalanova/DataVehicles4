@@ -11,11 +11,11 @@ namespace DataVehicles4.Client {
         private readonly StandardKernel kernel;
 
         public Context() {
-            View = new ViewContext();
+            Application = new ApplicationContext();
             kernel = new StandardKernel(new ViewModelDependencyContainer());
         }
 
-        public IViewContext View { get; private set; }
+        public IApplicationContext Application { get; private set; }
 
         public TService Service<TService>() {
             return kernel.Get<TService>();

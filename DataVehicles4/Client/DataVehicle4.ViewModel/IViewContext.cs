@@ -1,5 +1,7 @@
 ﻿namespace DataVehicle4.ViewModel {
-    public interface IViewContext {
-        void CloseWelcome();
+    public interface IApplicationContext {
+        void ShowMainWindow();
+        void SaveProperty(string key, string value);
+        string GetProperty(string key);
     }
 }

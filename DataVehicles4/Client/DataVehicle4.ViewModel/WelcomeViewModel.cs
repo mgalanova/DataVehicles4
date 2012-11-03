@@ -1,7 +1,6 @@
 ﻿#region Usings
 
 using System;
-using System.Windows;
 using System.Windows.Input;
 using DataVehicles4.ServiceProxy.AdminServiceReference;
 
@@ -14,6 +13,8 @@ namespace DataVehicle4.ViewModel {
         public WelcomeViewModel(IContext context) {
             this.context = context;
             LogInCommand = new Command(LogIn);
+            UserLogin = context.Application.GetProperty("UserLogin");
+            Password = context.Application.GetProperty("Password");
         }
 
         public string UserLogin { get; set; }
@@ -26,7 +27,9 @@ namespace DataVehicle4.ViewModel {
                 throw new ApplicationException("You are not authorized");
             }
 
-            context.View.CloseWelcome();
+            context.Application.SaveProperty("UserLogin", UserLogin);
+            context.Application.SaveProperty("Password", Password);
+            context.Application.ShowMainWindow();
         }
 
         private IAdminService AdminService {

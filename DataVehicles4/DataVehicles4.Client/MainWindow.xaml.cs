@@ -18,7 +18,6 @@ namespace DataVehicles4.Client {
         public MainWindow() {
             InitializeComponent();
             DataContext = new DataSource();
-            new Welcome().ShowDialog();
         }
     }
 
